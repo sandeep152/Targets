@@ -13,6 +13,7 @@
 		2C76F63E1FE7947A00D74534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C76F63D1FE7947A00D74534 /* Assets.xcassets */; };
 		2C76F6411FE7947A00D74534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C76F63F1FE7947A00D74534 /* LaunchScreen.storyboard */; };
 		2C76F64C1FE7947A00D74534 /* TargetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76F64B1FE7947A00D74534 /* TargetsTests.swift */; };
+		2C76F6571FE8614D00D74534 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76F6561FE8614D00D74534 /* Target.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		2C76F6471FE7947A00D74534 /* TargetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TargetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C76F64B1FE7947A00D74534 /* TargetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetsTests.swift; sourceTree = "<group>"; };
 		2C76F64D1FE7947A00D74534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C76F6561FE8614D00D74534 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				2C76F6361FE7947A00D74534 /* AppDelegate.swift */,
 				2C76F6381FE7947A00D74534 /* ViewController.swift */,
+				2C76F6561FE8614D00D74534 /* Target.swift */,
 				2C76F63A1FE7947A00D74534 /* Main.storyboard */,
 				2C76F63D1FE7947A00D74534 /* Assets.xcassets */,
 				2C76F63F1FE7947A00D74534 /* LaunchScreen.storyboard */,
@@ -199,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C76F6571FE8614D00D74534 /* Target.swift in Sources */,
 				2C76F6391FE7947A00D74534 /* ViewController.swift in Sources */,
 				2C76F6371FE7947A00D74534 /* AppDelegate.swift in Sources */,
 			);

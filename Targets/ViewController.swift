@@ -18,6 +18,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //Handle the text field's user input through delegate callbacks.
+        nameTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +28,19 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         // Dispose of any resources that can be recreated.
     }
 
+    
+    //MARK: UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Hide the keyboard.
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        targetNameLabel.text = textField.text
+    }
+    
     //MARK: UIImagePickerControllerDelegate
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -63,9 +79,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
     }
     
-    @IBAction func setDefaultLabelText(_ sender: UIButton) {
-        targetNameLabel.text = "Default text"
-    }
     
 }
 
