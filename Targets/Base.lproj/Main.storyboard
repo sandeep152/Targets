@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="F3l-Zk-XUz">
-                                <rect key="frame" x="20" y="40" width="335" height="424.5"/>
+                                <rect key="frame" x="20" y="40" width="335" height="439.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvw-f7-KMe">
                                         <rect key="frame" x="0.0" y="0.0" width="98" height="20.5"/>
@@ -41,11 +41,15 @@
                                             <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="thl-fE-kkK"/>
                                         </connections>
                                     </button>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lWj-rI-YnC">
-                                        <rect key="frame" x="0.0" y="104.5" width="320" height="320"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="lWj-rI-YnC">
+                                        <rect key="frame" x="0.0" y="104.5" width="335" height="335"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="lWj-rI-YnC" secondAttribute="height" multiplier="1:1" id="7qm-Vg-CqR"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="xtV-s7-E3W" appends="YES" id="DjD-q8-CqT"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -63,12 +67,21 @@
                     </view>
                     <connections>
                         <outlet property="nameTextField" destination="pr0-PG-r9g" id="O0L-Ve-9dU"/>
+                        <outlet property="photoImageView" destination="lWj-rI-YnC" id="rA5-1q-Y2p"/>
                         <outlet property="targetNameLabel" destination="pvw-f7-KMe" id="ccR-ia-EFX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xtV-s7-E3W">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="hMd-9D-mYj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultPhoto" width="540" height="540"/>
+    </resources>
 </document>
