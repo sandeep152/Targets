@@ -116,7 +116,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Target" id="KP7-ZZ-nX0">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8Vp-7A-ec1"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="fLR-Er-FLq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="fLR-Er-FLq">
+                            <connections>
+                                <segue destination="R0e-TY-brQ" kind="unwind" unwindAction="unwindToTargetListWithSender:" id="ETL-7Z-Vpm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="pr0-PG-r9g" id="jOg-W4-FWa"/>
@@ -125,6 +129,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="R0e-TY-brQ" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="xtV-s7-E3W">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="hMd-9D-mYj"/>

@@ -106,7 +106,16 @@ class TargetTableViewController: UITableViewController {
     */
 
     //MARK: Actions
-    
+    @IBAction func unwindToTargetList(sender: UIStoryboardSegue){
+        if let sourceViewController = sender.source as?
+            TargetViewController,
+            let targetvariable = sourceViewController.targetvariable {
+            //Add a new target
+            let newIndexPath = IndexPath(row: Targets.count, section: 0)
+            Targets.append(targetvariable)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
     
     //MARK: Private Methods
     
