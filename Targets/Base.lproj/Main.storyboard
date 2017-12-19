@@ -115,7 +115,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Target" id="KP7-ZZ-nX0">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8Vp-7A-ec1"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8Vp-7A-ec1">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="6jx-TZ-N0o"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="fLR-Er-FLq">
                             <connections>
                                 <segue destination="R0e-TY-brQ" kind="unwind" unwindAction="unwindToTargetListWithSender:" id="ETL-7Z-Vpm"/>
