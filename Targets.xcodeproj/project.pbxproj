@@ -14,6 +14,7 @@
 		2C76F6411FE7947A00D74534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C76F63F1FE7947A00D74534 /* LaunchScreen.storyboard */; };
 		2C76F64C1FE7947A00D74534 /* TargetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76F64B1FE7947A00D74534 /* TargetsTests.swift */; };
 		2C76F6571FE8614D00D74534 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76F6561FE8614D00D74534 /* Target.swift */; };
+		2CF2B4DF1FE8DD51000C13F6 /* TargetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF2B4DE1FE8DD51000C13F6 /* TargetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		2C76F64B1FE7947A00D74534 /* TargetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetsTests.swift; sourceTree = "<group>"; };
 		2C76F64D1FE7947A00D74534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C76F6561FE8614D00D74534 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
+		2CF2B4DE1FE8DD51000C13F6 /* TargetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TargetTableViewCell.swift; path = ../TargetTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				2C76F6361FE7947A00D74534 /* AppDelegate.swift */,
+				2CF2B4DE1FE8DD51000C13F6 /* TargetTableViewCell.swift */,
 				2C76F6381FE7947A00D74534 /* ViewController.swift */,
 				2C76F6561FE8614D00D74534 /* Target.swift */,
 				2C76F63A1FE7947A00D74534 /* Main.storyboard */,
@@ -204,6 +207,7 @@
 			files = (
 				2C76F6571FE8614D00D74534 /* Target.swift in Sources */,
 				2C76F6391FE7947A00D74534 /* ViewController.swift in Sources */,
+				2CF2B4DF1FE8DD51000C13F6 /* TargetTableViewCell.swift in Sources */,
 				2C76F6371FE7947A00D74534 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
