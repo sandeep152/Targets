@@ -105,6 +105,9 @@ class TargetTableViewController: UITableViewController {
     }
     */
 
+    //MARK: Actions
+    
+    
     //MARK: Private Methods
     
     private func loadSampleTargets(){

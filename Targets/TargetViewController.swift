@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import os.log
 
 class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     //MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    //This value is either passed by TargetTableViewController or created when adding a new Target
+    
+    var targetvariable: Target?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +65,23 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
     }
+    
+    //MARK: Navigation
+    // Configure a view controller before presenting
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        super.prepare(for: segue, sender: sender)
+        //Configure destination view controller only when save button is pressed
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+            let name = nameTextField.text ?? ""
+            let photo = photoImageView.image
+            //Set the meal to be passed to TargetTableViewController after unwind segue
+            targetvariable = Target(name: name, photo: photo)
+            
+    }
+
     //MARK: Actions
     
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
