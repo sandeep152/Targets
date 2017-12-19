@@ -15,13 +15,11 @@ class Target {
     
     var name: String
     var photo: UIImage?
-    var date: NSDate?
     
     //MARK: Initialisation
     
-    init?(name: String, photo: UIImage?, date: NSDate?){
+    init?(name: String, photo: UIImage?){
         self.name = name
         self.photo = photo
-        self.date = date
     }
 }

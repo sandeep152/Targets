@@ -38,8 +38,20 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXi-1G-4fP" userLabel="dateLabel">
+                                            <rect key="frame" x="98" y="35" width="157" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="NXi-1G-4fP" id="cMB-gi-lUT"/>
+                                    <outlet property="nameLabel" destination="64C-8E-kMr" id="0WE-Fx-fTB"/>
+                                    <outlet property="photoImageView" destination="Kz4-1S-Wyh" id="HmB-aq-OO6"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

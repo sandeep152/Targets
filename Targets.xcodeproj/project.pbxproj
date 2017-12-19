@@ -15,6 +15,7 @@
 		2C76F64C1FE7947A00D74534 /* TargetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76F64B1FE7947A00D74534 /* TargetsTests.swift */; };
 		2C76F6571FE8614D00D74534 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76F6561FE8614D00D74534 /* Target.swift */; };
 		2CF2B4DF1FE8DD51000C13F6 /* TargetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF2B4DE1FE8DD51000C13F6 /* TargetTableViewCell.swift */; };
+		2CF2B4E11FE8E1F6000C13F6 /* TargetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF2B4E01FE8E1F6000C13F6 /* TargetTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		2C76F64D1FE7947A00D74534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C76F6561FE8614D00D74534 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		2CF2B4DE1FE8DD51000C13F6 /* TargetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TargetTableViewCell.swift; path = ../TargetTableViewCell.swift; sourceTree = "<group>"; };
+		2CF2B4E01FE8E1F6000C13F6 /* TargetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				2C76F6561FE8614D00D74534 /* Target.swift */,
 				2C76F63A1FE7947A00D74534 /* Main.storyboard */,
 				2C76F63D1FE7947A00D74534 /* Assets.xcassets */,
+				2CF2B4E01FE8E1F6000C13F6 /* TargetTableViewController.swift */,
 				2C76F63F1FE7947A00D74534 /* LaunchScreen.storyboard */,
 				2C76F6421FE7947A00D74534 /* Info.plist */,
 			);
@@ -208,6 +211,7 @@
 				2C76F6571FE8614D00D74534 /* Target.swift in Sources */,
 				2C76F6391FE7947A00D74534 /* ViewController.swift in Sources */,
 				2CF2B4DF1FE8DD51000C13F6 /* TargetTableViewCell.swift in Sources */,
+				2CF2B4E11FE8E1F6000C13F6 /* TargetTableViewController.swift in Sources */,
 				2C76F6371FE7947A00D74534 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
