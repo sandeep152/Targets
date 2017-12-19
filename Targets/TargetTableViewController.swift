@@ -13,7 +13,7 @@ class TargetTableViewController: UITableViewController {
 
     //MARK: Properties
     
-    var Targets = [Target]()
+    var targets = [Target]()
     
     
     override func viewDidLoad() {
@@ -25,11 +25,6 @@ class TargetTableViewController: UITableViewController {
         //Load sample data
         loadSampleTargets()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +39,7 @@ class TargetTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Targets.count
+        return targets.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,8 +51,8 @@ class TargetTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of TargetTableViewCell.")
         }
         
-        // Fetches the appropriate meal for the data source layout.
-        let target = Targets[indexPath.row]
+        // Fetches the appropriate target for the data source layout.
+        let target = targets[indexPath.row]
         
         cell.nameLabel.text = target.name
         cell.photoImageView.image = target.photo
@@ -77,7 +72,8 @@ class TargetTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            Targets.remove(at: indexPath.row)
+            targets.remove(at: indexPath.row)
+            saveTargets()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -123,7 +119,7 @@ class TargetTableViewController: UITableViewController {
                     fatalError("The selected cell is not being displayed by the table")
                 }
                 
-                let selectedTarget = Targets[indexPath.row]
+                let selectedTarget = targets[indexPath.row]
                 targetDetailViewController.targetvariable = selectedTarget
                 
                 default:
@@ -138,14 +134,15 @@ class TargetTableViewController: UITableViewController {
             let targetvariable = sourceViewController.targetvariable {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 //update existing target
-                Targets[selectedIndexPath.row] = targetvariable
+                targets[selectedIndexPath.row] = targetvariable
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             } else {
             //Add a new target
-            let newIndexPath = IndexPath(row: Targets.count, section: 0)
-            Targets.append(targetvariable)
+            let newIndexPath = IndexPath(row: targets.count, section: 0)
+            targets.append(targetvariable)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
+            saveTargets()
     }
     }
     
@@ -158,6 +155,21 @@ class TargetTableViewController: UITableViewController {
         guard let sampletarget1 = Target(name: "Coursework deadline", photo: photo1) else {fatalError("Couldn't load sample target 1")}
         guard let sampletarget2 = Target(name: "Gym", photo: photo2) else {fatalError("Couldn't load sample target 2")}
         
-    Targets += [sampletarget1, sampletarget2]
+    targets += [sampletarget1, sampletarget2]
+    }
+    
+    //Save targets method
+   private func saveTargets(){
+    let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(targets, toFile: Target.ArchiveURL.path)
+    if isSuccessfulSave {
+        os_log("Targets saved.", log: OSLog.default, type: .debug)
+    } else {
+        os_log("Failed to save targets.", log: OSLog.default, type: .error)
+    }
+    }
+    
+    //Load targets method
+    private func loadTargets() -> [Target]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Target.ArchiveURL.path) as? [Target]
     }
 }
