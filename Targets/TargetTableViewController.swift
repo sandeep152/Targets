@@ -4,9 +4,10 @@
 //
 //  Created by Sandeep Chowdhury on 19/12/2017.
 //  Copyright © 2017 Sandeep Chowdhury. All rights reserved.
-//
+// REMINDER: ; are not needed after every line
 
 import UIKit
+import os.log
 
 class TargetTableViewController: UITableViewController {
 
@@ -95,15 +96,38 @@ class TargetTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
+    // MARK: Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? ""){
+            
+        case "AddItem":
+            os_log("Adding a new target.", log: OSLog.default, type: .debug)
+            
+        case "ShowDetail":
+                guard let targetDetailViewController = segue.destination as? TargetViewController else {
+                fatalError("Unexpected segue destination: \(segue.destination)")
+            }
+            
+                guard let selectedTargetCell = sender as? TargetTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+                guard let indexPath = tableView.indexPath(for: selectedTargetCell) else {
+                    fatalError("The selected cell is not being displayed by the table")
+                }
+                
+                let selectedTarget = Targets[indexPath.row]
+                targetDetailViewController.targetvariable = selectedTarget
+                
+                default:
+                fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+            }
+        }
+
 
     //MARK: Actions
     @IBAction func unwindToTargetList(sender: UIStoryboardSegue){

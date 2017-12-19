@@ -27,6 +27,13 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         //Handle the text field's user input through delegate callbacks.
         nameTextField.delegate = self
         
+        //Set up views if editing an existing Target
+        if let Target = targetvariable {
+            navigationItem.title = Target.name
+            nameTextField.text = Target.name
+            photoImageView.image = Target.photo
+        }
+        
         //Enable save button only if text field has valid target name
         updateSaveButtonState()
     }
