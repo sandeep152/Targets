@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TargetViewController.swift
 //  Targets
 //
 //  Created by Sandeep Chowdhury on 18/12/2017.
@@ -8,11 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     //MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var targetNameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
     
     override func viewDidLoad() {
@@ -38,7 +37,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        targetNameLabel.text = textField.text
+
     }
     
     //MARK: UIImagePickerControllerDelegate
