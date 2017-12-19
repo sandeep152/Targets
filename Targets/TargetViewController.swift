@@ -83,7 +83,15 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     //MARK: Navigation
     @IBAction func cancel(_ sender: UIBarButtonItem) {
+        //Depending on presentation style, view controller will be dismissed in two different ways
+        let isPresentingInAddTargetMode = presentingViewController is UINavigationController
+        if isPresentingInAddTargetMode {
         dismiss(animated: true, completion: nil)
+        } else if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        } else {
+            fatalError("The TargetViewController is not inside a navigation controller.")
+        }
     }
     
     
