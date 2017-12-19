@@ -22,9 +22,13 @@ class TargetTableViewController: UITableViewController {
         //Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem
         
+        //Load saved targets or sample data if no targets to load
+        if let savedTargets = loadTargets(){
+        targets += savedTargets
+        } else {
         //Load sample data
         loadSampleTargets()
-        
+        }
     }
 
     override func didReceiveMemoryWarning() {
