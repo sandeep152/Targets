@@ -4,7 +4,7 @@
 //
 //  Created by Sandeep Chowdhury on 19/12/2017.
 //  Copyright © 2017 Sandeep Chowdhury. All rights reserved.
-// REMINDER: ; are not needed after every line
+// REMINDER: ; are not needed after every line and {} are being and end statements
 
 import UIKit
 import os.log
@@ -14,7 +14,7 @@ class TargetTableViewController: UITableViewController {
     //MARK: Properties
     
     var targets = [Target]()
-    
+    var daysRemainingofTarget: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,7 @@ class TargetTableViewController: UITableViewController {
         //Load sample data
         loadSampleTargets()
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +48,8 @@ class TargetTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Set up date formatter
+        let dateFormatter = DateFormatter()
         
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "TargetTableViewCell"
@@ -62,7 +65,25 @@ class TargetTableViewController: UITableViewController {
         cell.descLabel.text = target.desc
         cell.dueDateLabel.text = ("Due: \(target.dueDate)")
         cell.photoImageView.image = target.photo
+        cell.dueDateLabel.text = target.dueDate
         
+        //Calculate remaining number of days
+        let dateString = cell.dueDateLabel.text
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let dateFromString = dateFormatter.date(from: dateString!)
+        let days = Calendar.current.dateComponents([.day], from: dateFromString!, to: Date()).day
+
+        //Mutate the number of remaining days displayed
+        let daysDisplay = Int(abs(days!))
+        if daysDisplay > 99 {
+            cell.daysRemainLabel.text = ("99+")
+            cell.daysRemainLabel.textColor = .blue
+        } else if daysDisplay < 1 {
+            cell.daysRemainLabel.text = ("0")
+            cell.daysRemainLabel.textColor = .red
+        } else {
+        cell.daysRemainLabel.text = ("\(daysDisplay)")
+        }
         return cell
     }
 
@@ -152,18 +173,6 @@ class TargetTableViewController: UITableViewController {
     }
     }
     
-    func determineDaysLeft(){
-        //Convert string to date variable
-        
-        //work out days remaining
-        
-        //if days remaining is more than 9 show 9+
-        
-        //else if days remaining is less than 0, show 0
-        
-        //else show days remaining
-        
-    }
     
     //MARK: Private Methods
     
@@ -171,8 +180,8 @@ class TargetTableViewController: UITableViewController {
     let photo1 = UIImage(named: "sampleTarget1")
     let photo2 = UIImage(named: "sampleTarget2")
         
-        guard let sampletarget1 = Target(name: "Coursework deadline", desc: "Include 5 references", dueDate: "Dec 07, 2017", photo: photo1) else {fatalError("Couldn't load sample target 1")}
-        guard let sampletarget2 = Target(name: "Gym", desc: "LEG DAY!", dueDate: "Dec 07, 2017", photo: photo2) else {fatalError("Couldn't load sample target 2")}
+        guard let sampletarget1 = Target(name: "Coursework deadline", desc: "Include 5 references", dueDate: "07-12-2018", photo: photo1) else {fatalError("Couldn't load sample target 1")}
+        guard let sampletarget2 = Target(name: "Gym", desc: "LEG DAY!", dueDate: "02-02-2018", photo: photo2) else {fatalError("Couldn't load sample target 2")}
         
     targets += [sampletarget1, sampletarget2]
     }
