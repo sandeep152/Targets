@@ -117,7 +117,7 @@ class TargetTableViewController: UITableViewController {
             }
             
                 guard let selectedTargetCell = sender as? TargetTableViewCell else {
-                fatalError("Unexpected sender: \(sender)")
+                    fatalError("Unexpected sender: \(String(describing: sender))")
             }
             
                 guard let indexPath = tableView.indexPath(for: selectedTargetCell) else {
@@ -128,7 +128,7 @@ class TargetTableViewController: UITableViewController {
                 targetDetailViewController.targetvariable = selectedTarget
                 
                 default:
-                fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+                    fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
             }
         }
 

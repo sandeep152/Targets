@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Targets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3g-ge-Q4M">
-                                <rect key="frame" x="122" y="365" width="131" height="52"/>
+                                <rect key="frame" x="122" y="380" width="131" height="52"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -42,10 +42,9 @@
                         <color key="backgroundColor" red="0.43811267614364624" green="0.048099353909492493" blue="0.32267659902572632" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nWC-o7-PPj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2e7-dU-9f0"/>
-                            <constraint firstItem="a3g-ge-Q4M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="122" id="CcS-Gc-nPh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a3g-ge-Q4M" secondAttribute="bottom" constant="250" id="Sbu-yB-lIA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a3g-ge-Q4M" secondAttribute="trailing" constant="122" id="UdT-kh-WQ8"/>
+                            <constraint firstItem="a3g-ge-Q4M" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bND-t1-4VV"/>
                             <constraint firstItem="nWC-o7-PPj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="kbK-mb-8rS"/>
+                            <constraint firstItem="a3g-ge-Q4M" firstAttribute="top" secondItem="nWC-o7-PPj" secondAttribute="bottom" constant="20" id="kvo-YO-SA7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

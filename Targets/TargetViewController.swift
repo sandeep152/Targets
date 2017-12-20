@@ -131,6 +131,7 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
         // Hide the keyboard.
         nameTextField.resignFirstResponder()
+        descriptionTextField.resignFirstResponder()
         
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
