@@ -50,7 +50,7 @@ class Target: NSObject, NSCoding {
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        // The name is required. If we cannot decode a name string, the initializer should fail.
+        // The name, description and due dates are required. If we cannot decode a name string, the initializer should fail.
         guard let name = aDecoder.decodeObject(forKey: PropertyKey.name) as? String else {
             os_log("Unable to decode the name for a Target object.", log: OSLog.default, type: .debug)
             return nil
@@ -63,7 +63,7 @@ class Target: NSObject, NSCoding {
             os_log("Unable to decode the due date for a Target object.", log: OSLog.default, type: .debug)
             return nil
         }
-        //Because photo is optional, use conditional cast.
+        //Because photos and days remaining are optional, use conditional cast.
         let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
         
         //Must call designated initialiser

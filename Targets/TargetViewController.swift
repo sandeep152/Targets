@@ -17,11 +17,12 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
-    
+    @IBOutlet weak var daysRemainLabel: UILabel!
     
     
     //This value is either passed by TargetTableViewController or created when adding a new Target
     var targetvariable: Target?
+    var targetDaysRemaining: Int?
     // Establish a date picker variable to be used for the date field
     let picker = UIDatePicker()
     
@@ -30,7 +31,8 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         // Do any additional setup after loading the view, typically from a nib.
         //Initialise the date picker
         createDatePicker()
-        
+        //Set days remaining to nothing
+        daysRemainLabel.text = ""
         //Handle the text field's user input through delegate callbacks.
         nameTextField.delegate = self
         
@@ -170,10 +172,28 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
+        formatter.dateFormat = "dd-MM-yyyy"
         let dateString = formatter.string(from: picker.date)
         dateTextField.text = "\(dateString)"
         self.view.endEditing(true)
+      // Update Days Remaining
+  
+        let currentDate = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let StringDate = dateFormatter.string(from: currentDate as Date)
+        print(StringDate)
+        
+        //String to NSDate
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let dateFromString = dateFormatter.date(from: dateString)
+        print(dateFromString!)
+        //Work out amount of days
+        let days = Calendar.current.dateComponents([.day], from: dateFromString!, to: Date()).day
+        targetDaysRemaining = abs(days!)
+        daysRemainLabel.text = "Days remaining: \(abs(days!))"
     }
+
     
     //MARK: Private Methods
     private func updateSaveButtonState(){

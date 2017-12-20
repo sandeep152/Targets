@@ -1,0 +1,27 @@
+
+/* Class = "UINavigationItem"; title = "New Target"; ObjectID = "KP7-ZZ-nX0"; */
+"KP7-ZZ-nX0.title" = "New Target";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NXi-1G-4fP"; */
+"NXi-1G-4fP.text" = "Label";
+
+/* Class = "UILabel"; text = "Due Date:"; ObjectID = "TgF-Fx-whI"; */
+"TgF-Fx-whI.text" = "Due Date:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gv9-Wc-BLF"; */
+"gv9-Wc-BLF.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Your Targets"; ObjectID = "hc7-Rd-UHg"; */
+"hc7-Rd-UHg.title" = "Your Targets";
+
+/* Class = "UILabel"; text = "Description:"; ObjectID = "liM-Te-dl2"; */
+"liM-Te-dl2.text" = "Description:";
+
+/* Class = "UITextField"; placeholder = "Enter target name"; ObjectID = "pr0-PG-r9g"; */
+"pr0-PG-r9g.placeholder" = "Enter target name";
+
+/* Class = "UILabel"; text = "Due:"; ObjectID = "sDX-FG-KYS"; */
+"sDX-FG-KYS.text" = "Due:";
+
+/* Class = "UITextField"; placeholder = "Enter description"; ObjectID = "uLh-ew-9Kg"; */
+"uLh-ew-9Kg.placeholder" = "Enter description";

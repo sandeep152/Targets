@@ -139,7 +139,7 @@ class TargetTableViewController: UITableViewController {
         if let sourceViewController = sender.source as? TargetViewController,
             let targetvariable = sourceViewController.targetvariable {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                //update existing target
+                //Update existing target
                 targets[selectedIndexPath.row] = targetvariable
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             } else {
@@ -150,6 +150,19 @@ class TargetTableViewController: UITableViewController {
         }
             saveTargets()
     }
+    }
+    
+    func determineDaysLeft(){
+        //Convert string to date variable
+        
+        //work out days remaining
+        
+        //if days remaining is more than 9 show 9+
+        
+        //else if days remaining is less than 0, show 0
+        
+        //else show days remaining
+        
     }
     
     //MARK: Private Methods
