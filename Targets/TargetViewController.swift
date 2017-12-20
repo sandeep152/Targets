@@ -16,16 +16,20 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var dateTextField: UITextField!
     
     
     
     //This value is either passed by TargetTableViewController or created when adding a new Target
-    
     var targetvariable: Target?
+    // Establish a date picker variable to be used for the date field
+    let picker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //Initialise the date picker
+        createDatePicker()
         
         //Handle the text field's user input through delegate callbacks.
         nameTextField.delegate = self
@@ -36,6 +40,7 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             nameTextField.text = Target.name
             descriptionTextField.text = Target.desc
             photoImageView.image = Target.photo
+            dateTextField.text = Target.dueDate
         }
         
         //Enable save button only if text field has valid target name
@@ -107,8 +112,6 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         }
     }
     
-    
-    
     // Configure a view controller before presenting
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         super.prepare(for: segue, sender: sender)
@@ -119,9 +122,10 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         }
             let name = nameTextField.text ?? ""
             let desc = descriptionTextField.text ?? ""
+            let dueDate = dateTextField.text ?? ""
             let photo = photoImageView.image
             //Set the target to be passed to TargetTableViewController after unwind segue
-        targetvariable = Target(name: name, desc: desc, photo: photo)
+        targetvariable = Target(name: name, desc: desc, dueDate: dueDate, photo: photo)
             
     }
 
@@ -143,6 +147,32 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
         
+    }
+    func createDatePicker(){
+        //Create picker toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        //Create done button for toolbar
+        let done = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([done], animated: false)
+        
+        dateTextField.inputAccessoryView = toolbar
+        dateTextField.inputView = picker
+        
+        //Format picker to show date
+        picker.datePickerMode = .date
+    }
+    
+    //@objc is needed to call an objective-c derived command
+    @objc func donePressed() {
+        //Format the date
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        let dateString = formatter.string(from: picker.date)
+        dateTextField.text = "\(dateString)"
+        self.view.endEditing(true)
     }
     
     //MARK: Private Methods

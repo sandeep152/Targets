@@ -60,6 +60,7 @@ class TargetTableViewController: UITableViewController {
         
         cell.nameLabel.text = target.name
         cell.descLabel.text = target.desc
+        cell.dueDateLabel.text = ("Due: \(target.dueDate)")
         cell.photoImageView.image = target.photo
         
         return cell
@@ -157,8 +158,8 @@ class TargetTableViewController: UITableViewController {
     let photo1 = UIImage(named: "sampleTarget1")
     let photo2 = UIImage(named: "sampleTarget2")
         
-        guard let sampletarget1 = Target(name: "Coursework deadline", desc: "Include 5 references", photo: photo1) else {fatalError("Couldn't load sample target 1")}
-        guard let sampletarget2 = Target(name: "Gym", desc: "LEG DAY!", photo: photo2) else {fatalError("Couldn't load sample target 2")}
+        guard let sampletarget1 = Target(name: "Coursework deadline", desc: "Include 5 references", dueDate: "Dec 07, 2017", photo: photo1) else {fatalError("Couldn't load sample target 1")}
+        guard let sampletarget2 = Target(name: "Gym", desc: "LEG DAY!", dueDate: "Dec 07, 2017", photo: photo2) else {fatalError("Couldn't load sample target 2")}
         
     targets += [sampletarget1, sampletarget2]
     }

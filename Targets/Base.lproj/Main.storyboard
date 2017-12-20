@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,24 +32,36 @@
                                             <rect key="frame" x="285" y="-1" width="90" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv9-Wc-BLF" userLabel="nameLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv9-Wc-BLF" userLabel="nameLabel">
                                             <rect key="frame" x="72" y="6" width="277" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXi-1G-4fP" userLabel="descLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXi-1G-4fP" userLabel="descLabel">
                                             <rect key="frame" x="72" y="29" width="205" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Due:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDX-FG-KYS">
+                                            <rect key="frame" x="72" y="68" width="205" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="sDX-FG-KYS" firstAttribute="leading" secondItem="NXi-1G-4fP" secondAttribute="leading" id="2sg-pK-6JO"/>
+                                        <constraint firstItem="sDX-FG-KYS" firstAttribute="leading" secondItem="gv9-Wc-BLF" secondAttribute="leading" id="LPP-OI-YsU"/>
+                                        <constraint firstItem="sDX-FG-KYS" firstAttribute="bottom" secondItem="64C-8E-kMr" secondAttribute="bottomMargin" id="bXr-Jp-zhS"/>
+                                        <constraint firstItem="sDX-FG-KYS" firstAttribute="top" secondItem="NXi-1G-4fP" secondAttribute="bottom" constant="8" symbolic="YES" id="fdB-Fx-Hw6"/>
+                                        <constraint firstItem="sDX-FG-KYS" firstAttribute="leading" secondItem="64C-8E-kMr" secondAttribute="leadingMargin" constant="56" id="zgJ-Ef-Lkg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="descLabel" destination="NXi-1G-4fP" id="TQl-DK-gwr"/>
+                                    <outlet property="dueDateLabel" destination="sDX-FG-KYS" id="bhi-CI-X53"/>
                                     <outlet property="nameLabel" destination="gv9-Wc-BLF" id="DcR-4I-yUp"/>
                                     <outlet property="photoImageView" destination="Kz4-1S-Wyh" id="HmB-aq-OO6"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="34B-NV-aOl"/>
@@ -81,7 +94,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="F3l-Zk-XUz">
-                                <rect key="frame" x="20" y="84" width="335" height="436"/>
+                                <rect key="frame" x="20" y="84" width="335" height="499"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter target name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pr0-PG-r9g">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
@@ -101,8 +114,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgF-Fx-whI">
+                                        <rect key="frame" x="0.0" y="101" width="64" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MhD-ws-K2d">
+                                        <rect key="frame" x="0.0" y="126" width="335" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="lWj-rI-YnC">
-                                        <rect key="frame" x="0.0" y="101" width="335" height="335"/>
+                                        <rect key="frame" x="0.0" y="164" width="335" height="335"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="lWj-rI-YnC" secondAttribute="height" multiplier="1:1" id="7qm-Vg-CqR"/>
@@ -117,6 +142,7 @@
                                     <constraint firstAttribute="trailing" secondItem="pr0-PG-r9g" secondAttribute="trailing" id="Azr-Pl-7UU"/>
                                     <constraint firstAttribute="trailing" secondItem="uLh-ew-9Kg" secondAttribute="trailing" id="CBJ-yh-qzE"/>
                                     <constraint firstItem="pr0-PG-r9g" firstAttribute="centerX" secondItem="F3l-Zk-XUz" secondAttribute="centerX" id="SPt-CQ-a8x"/>
+                                    <constraint firstAttribute="trailing" secondItem="MhD-ws-K2d" secondAttribute="trailing" id="cfb-En-GLg"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -141,6 +167,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dateTextField" destination="MhD-ws-K2d" id="4WG-Va-QSO"/>
                         <outlet property="descriptionTextField" destination="uLh-ew-9Kg" id="k4D-0O-2sU"/>
                         <outlet property="nameTextField" destination="pr0-PG-r9g" id="jOg-W4-FWa"/>
                         <outlet property="photoImageView" destination="lWj-rI-YnC" id="xLP-2v-TCD"/>
