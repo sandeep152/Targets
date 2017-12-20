@@ -59,6 +59,7 @@ class TargetTableViewController: UITableViewController {
         let target = targets[indexPath.row]
         
         cell.nameLabel.text = target.name
+        cell.descLabel.text = target.desc
         cell.photoImageView.image = target.photo
         
         return cell
@@ -156,8 +157,8 @@ class TargetTableViewController: UITableViewController {
     let photo1 = UIImage(named: "sampleTarget1")
     let photo2 = UIImage(named: "sampleTarget2")
         
-        guard let sampletarget1 = Target(name: "Coursework deadline", photo: photo1) else {fatalError("Couldn't load sample target 1")}
-        guard let sampletarget2 = Target(name: "Gym", photo: photo2) else {fatalError("Couldn't load sample target 2")}
+        guard let sampletarget1 = Target(name: "Coursework deadline", desc: "Include 5 references", photo: photo1) else {fatalError("Couldn't load sample target 1")}
+        guard let sampletarget2 = Target(name: "Gym", desc: "LEG DAY!", photo: photo2) else {fatalError("Couldn't load sample target 2")}
         
     targets += [sampletarget1, sampletarget2]
     }

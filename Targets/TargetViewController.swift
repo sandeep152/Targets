@@ -15,6 +15,9 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var descriptionTextField: UITextField!
+    
+    
     
     //This value is either passed by TargetTableViewController or created when adding a new Target
     
@@ -26,11 +29,13 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
         //Handle the text field's user input through delegate callbacks.
         nameTextField.delegate = self
+        descriptionTextField.text = "Sample text"
         
         //Set up views if editing an existing Target
         if let Target = targetvariable {
             navigationItem.title = Target.name
             nameTextField.text = Target.name
+            descriptionTextField.text = Target.desc
             photoImageView.image = Target.photo
         }
         
@@ -55,10 +60,19 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         textField.resignFirstResponder()
         return true
     }
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
         navigationItem.title = textField.text
+    }
+    
+    //MARK: UITextViewDelegate
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        //Disable Save button (again)
+        saveButton.isEnabled = false
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        updateSaveButtonState()
     }
     
     //MARK: UIImagePickerControllerDelegate
@@ -105,9 +119,10 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             return
         }
             let name = nameTextField.text ?? ""
+            let desc = descriptionTextField.text ?? ""
             let photo = photoImageView.image
-            //Set the meal to be passed to TargetTableViewController after unwind segue
-            targetvariable = Target(name: name, photo: photo)
+            //Set the target to be passed to TargetTableViewController after unwind segue
+        targetvariable = Target(name: name, desc: desc, photo: photo)
             
     }
 

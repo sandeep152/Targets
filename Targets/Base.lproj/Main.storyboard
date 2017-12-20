@@ -27,28 +27,28 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXi-1G-4fP" userLabel="descLabel">
-                                            <rect key="frame" x="72" y="35" width="157" height="21"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Kz4-1S-Wyh">
+                                            <rect key="frame" x="285" y="-1" width="90" height="90"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv9-Wc-BLF" userLabel="nameLabel">
+                                            <rect key="frame" x="72" y="6" width="277" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv9-Wc-BLF" userLabel="nameLabel">
-                                            <rect key="frame" x="72" y="6" width="277" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXi-1G-4fP" userLabel="descLabel">
+                                            <rect key="frame" x="72" y="34" width="205" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Kz4-1S-Wyh">
-                                            <rect key="frame" x="285" y="-1" width="90" height="90"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="dateLabel" destination="NXi-1G-4fP" id="gDe-oX-p6I"/>
+                                    <outlet property="descLabel" destination="NXi-1G-4fP" id="TQl-DK-gwr"/>
                                     <outlet property="nameLabel" destination="gv9-Wc-BLF" id="DcR-4I-yUp"/>
                                     <outlet property="photoImageView" destination="Kz4-1S-Wyh" id="HmB-aq-OO6"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="34B-NV-aOl"/>
@@ -81,7 +81,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="F3l-Zk-XUz">
-                                <rect key="frame" x="20" y="84" width="335" height="373"/>
+                                <rect key="frame" x="20" y="84" width="335" height="436"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter target name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pr0-PG-r9g">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
@@ -89,8 +89,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liM-Te-dl2">
+                                        <rect key="frame" x="0.0" y="38" width="78" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uLh-ew-9Kg">
+                                        <rect key="frame" x="0.0" y="63" width="335" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="lWj-rI-YnC">
-                                        <rect key="frame" x="0.0" y="38" width="335" height="335"/>
+                                        <rect key="frame" x="0.0" y="101" width="335" height="335"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="lWj-rI-YnC" secondAttribute="height" multiplier="1:1" id="7qm-Vg-CqR"/>
@@ -103,6 +115,7 @@
                                 <constraints>
                                     <constraint firstItem="lWj-rI-YnC" firstAttribute="centerX" secondItem="F3l-Zk-XUz" secondAttribute="centerX" id="3F5-HM-Mkc"/>
                                     <constraint firstAttribute="trailing" secondItem="pr0-PG-r9g" secondAttribute="trailing" id="Azr-Pl-7UU"/>
+                                    <constraint firstAttribute="trailing" secondItem="uLh-ew-9Kg" secondAttribute="trailing" id="CBJ-yh-qzE"/>
                                     <constraint firstItem="pr0-PG-r9g" firstAttribute="centerX" secondItem="F3l-Zk-XUz" secondAttribute="centerX" id="SPt-CQ-a8x"/>
                                 </constraints>
                             </stackView>
@@ -128,6 +141,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="descriptionTextField" destination="uLh-ew-9Kg" id="k4D-0O-2sU"/>
                         <outlet property="nameTextField" destination="pr0-PG-r9g" id="jOg-W4-FWa"/>
                         <outlet property="photoImageView" destination="lWj-rI-YnC" id="xLP-2v-TCD"/>
                         <outlet property="saveButton" destination="fLR-Er-FLq" id="JNI-eR-jFe"/>
@@ -141,7 +155,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1262" y="134"/>
+            <point key="canvasLocation" x="1261.5999999999999" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v8w-U3-ZYZ">

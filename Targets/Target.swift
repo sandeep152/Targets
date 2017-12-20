@@ -15,6 +15,7 @@ class Target: NSObject, NSCoding {
     //MARK: Properties
     
     var name: String
+    var desc: String
     var photo: UIImage?
     
     //MARK: Archiving Paths
@@ -25,19 +26,22 @@ class Target: NSObject, NSCoding {
     
     struct PropertyKey{
         static let name = "name"
+        static let desc = "desc"
         static let photo = "photo"
     }
     
     //MARK: Initialisation
     
-    init?(name: String, photo: UIImage?){
+    init?(name: String, desc: String, photo: UIImage?){
         self.name = name
+        self.desc = desc
         self.photo = photo
     }
     
     //MARK: NSCoding
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.name)
+        aCoder.encode(desc, forKey: PropertyKey.desc)
         aCoder.encode(photo, forKey: PropertyKey.photo)
     }
     
@@ -47,11 +51,15 @@ class Target: NSObject, NSCoding {
             os_log("Unable to decode the name for a Target object.", log: OSLog.default, type: .debug)
             return nil
         }
+        guard let desc = aDecoder.decodeObject(forKey: PropertyKey.desc) as? String else {
+            os_log("Unable to decode the description for a Target object.", log: OSLog.default, type: .debug)
+            return nil
+        }
         //Because photo is optional, use conditional cast.
         let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
         
         //Must call designated initialiser
-        self.init(name: name, photo: photo)
+        self.init(name: name, desc: desc, photo: photo)
     }
     
     
