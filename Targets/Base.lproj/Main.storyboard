@@ -133,28 +133,28 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lsu-Tr-oiI">
-                                        <rect key="frame" x="0.0" y="101" width="174" height="17"/>
+                                        <rect key="frame" x="0.0" y="101" width="335" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgF-Fx-whI">
-                                                <rect key="frame" x="0.0" y="0.0" width="64" height="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 days remaining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zi-of-tPE">
-                                                <rect key="frame" x="64" y="0.0" width="110" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MhD-ws-K2d">
+                                                <rect key="frame" x="64" y="0.0" width="271" height="30"/>
                                                 <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                     </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MhD-ws-K2d">
-                                        <rect key="frame" x="0.0" y="126" width="335" height="30"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 days remaining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zi-of-tPE">
+                                        <rect key="frame" x="0.0" y="139" width="110" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="lWj-rI-YnC">
                                         <rect key="frame" x="0.0" y="164" width="335" height="335"/>
                                         <gestureRecognizers/>
@@ -171,7 +171,7 @@
                                     <constraint firstAttribute="trailing" secondItem="pr0-PG-r9g" secondAttribute="trailing" id="Azr-Pl-7UU"/>
                                     <constraint firstAttribute="trailing" secondItem="uLh-ew-9Kg" secondAttribute="trailing" id="CBJ-yh-qzE"/>
                                     <constraint firstItem="pr0-PG-r9g" firstAttribute="centerX" secondItem="F3l-Zk-XUz" secondAttribute="centerX" id="SPt-CQ-a8x"/>
-                                    <constraint firstAttribute="trailing" secondItem="MhD-ws-K2d" secondAttribute="trailing" id="cfb-En-GLg"/>
+                                    <constraint firstItem="lsu-Tr-oiI" firstAttribute="centerX" secondItem="F3l-Zk-XUz" secondAttribute="centerX" id="dYu-U7-1IB"/>
                                 </constraints>
                             </stackView>
                         </subviews>

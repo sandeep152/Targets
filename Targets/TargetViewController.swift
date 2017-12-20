@@ -176,8 +176,8 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let dateString = formatter.string(from: picker.date)
         dateTextField.text = "\(dateString)"
         self.view.endEditing(true)
+        
       // Update Days Remaining
-  
         let currentDate = NSDate()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
@@ -191,7 +191,7 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         //Work out amount of days
         let days = Calendar.current.dateComponents([.day], from: dateFromString!, to: Date()).day
         targetDaysRemaining = abs(days!)
-        daysRemainLabel.text = "Days remaining: \(abs(days!))"
+        daysRemainLabel.text = " \(abs(days!)) days remaining"
     }
 
     
