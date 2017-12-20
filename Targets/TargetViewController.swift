@@ -29,7 +29,6 @@ class TargetViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
         //Handle the text field's user input through delegate callbacks.
         nameTextField.delegate = self
-        descriptionTextField.text = "Sample text"
         
         //Set up views if editing an existing Target
         if let Target = targetvariable {
